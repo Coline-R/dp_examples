@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mon site</title>
+        <link rel="stylesheet" href="assets/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Mon site</h1>
+        </header>
+        
+        <main>
+            <!-- Section présentation -->
+            <section>
+                <h2>Présentation</h2>
+
+                <h3>Coline R.</h3>
+                
+                <img src="https://cdn.onlinewebfonts.com/svg/img_211247.png" alt="avatar">
+                <p>Etudiante en formation Développeur Web et Web Mobile</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt laudantium laboriosam totam doloremque. Earum odit, rem quisquam debitis expedita at ducimus nemo perferendis assumenda! Laudantium perferendis enim voluptates dolores mollitia labore! Architecto tenetur illo molestias possimus quae, dolores repellendus dolor, labore excepturi maiores quis quisquam deleniti! Voluptate maiores sed mollitia doloremque ipsum repudiandae, omnis quis, rerum perferendis temporibus autem asperiores sit modi distinctio. Praesentium voluptate omnis totam magni impedit ab neque voluptatum vitae. Id, dolorum. Dolore, voluptate odio. Saepe iure sequi dignissimos, quae dolorem, quibusdam blanditiis iusto nihil natus fuga dolore provident nulla. At voluptatibus illo exercitationem harum aliquam reiciendis.</p>
+            </section>
+            
+            <!-- Section affichage des expériences -->
+            <section>
+                <h2>Expériences</h2>
+
+                <div class="xp_box">
+                    <?php foreach ($experiences as $key => $values) : ?>
+                        <div class="xp">
+                            <h3><?= $values['titre'] ?></h3>
+                            <span class="date"><?= $values['date'] ?></span>
+                            <p class="description"><?= $values['description'] ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+
+            <!-- Section formulaire de contact -->
+            <section>
+                <h2>Contact</h2>
+
+                <form action="functions/contact.php" method="post">
+                    <label for="nom">Votre nom :</label>
+                    <input type="text" name="nom" id="nom" required>
+                    <label for="sujet">Le sujet de votre message :</label>
+                    <input type="text" name="sujet" id="sujet" required>
+                    <label for="email">Votre mail :</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="message">Votre message :</label>
+                    <textarea name="message" id="message" cols="80" rows="10" required></textarea>
+                    <input type="submit" value="Enregistrer" id="register_btn">
+                </form>
+            </section>
+        </main>
+        
+    </body>
+</html>
